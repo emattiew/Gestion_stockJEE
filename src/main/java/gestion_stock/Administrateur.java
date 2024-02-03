@@ -1,22 +1,19 @@
 package gestion_stock;
 
 public class Administrateur {
-    
-    private static final String ID_PAR_DEFAUT = "admin";
-    private static String MOT_DE_PASSE_PAR_DEFAUT = "admin";
+    private static final String DEFAULT_USERNAME = "admin";
+    private static String DEFAULT_PASSWORD = "admin";
 
     public static boolean verifierIdentifiantMotDePasse(String identifiant, String motDePasse) {
-        return ID_PAR_DEFAUT.equals(identifiant) && MOT_DE_PASSE_PAR_DEFAUT.equals(motDePasse);
+        return DEFAULT_USERNAME.equals(identifiant) && DEFAULT_PASSWORD.equals(motDePasse);
     }
 
-   
     public static void modifierMotDePasse(String nouveauMotDePasse) {
-        MOT_DE_PASSE_PAR_DEFAUT = nouveauMotDePasse;
+        DEFAULT_PASSWORD = nouveauMotDePasse;
     }
-
 
     public static String getIdentifiantParDefaut() {
-        return ID_PAR_DEFAUT;
+        return DEFAULT_USERNAME;
     }
 }
 

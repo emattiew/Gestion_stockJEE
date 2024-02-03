@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<element>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
-  <display-name>gestion_stock</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
-  <servlet>
-    <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>gestion_stock.LoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>LoginServlet</servlet-name>
-    <url-pattern>/LoginServlet</url-pattern>
-  </servlet-mapping>
-  <filter>
-    <display-name>login</display-name>
-    <filter-name>login</filter-name>
-    <filter-class>login</filter-class>
-  </filter>
-  <filter-mapping>
-    <filter-name>login</filter-name>
-    <url-pattern>/login</url-pattern>
-  </filter-mapping>
+    <display-name>gestion_stock</display-name>
+    <servlet>
+<servlet-name>jersey-servlet</servlet-name>
+<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+<init-param>
+<param-name>jersey.config.server.provider.packages</param-name>
+<param-value>gestion_stock;</param-value>
+</init-param>
+</servlet>
+<servlet-mapping>
+<servlet-name>jersey-servlet</servlet-name>
+<url-pattern>/ws-rest/*</url-pattern>
+</servlet-mapping>
+
+    <filter>
+        <display-name>login</display-name>
+        <filter-name>login</filter-name>
+        <filter-class>gestion_stock.login</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>login</filter-name>
+        <url-pattern>/login</url-pattern>
+    </filter-mapping>
 </web-app>
+</element>

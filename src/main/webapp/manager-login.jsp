@@ -55,8 +55,8 @@
 <body>
     <div class="container">
         <h2>Connexion directeur general</h2>
-        <form action="LoginServlet" >
-            <input type="text" name="nom" placeholder="Nom d'utilisateur" required><br>
+        <form action="login" >
+            <input type="text" name="login" placeholder="Nom d'utilisateur" required><br>
             <input type="password" name="password" placeholder="Mot de passe" required><br>
             <input type="submit" value="Se connecter">
         </form>

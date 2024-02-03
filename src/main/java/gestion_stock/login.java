@@ -1,7 +1,5 @@
 package gestion_stock;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 
 import jakarta.servlet.Filter;
 import jakarta.servlet.FilterChain;
@@ -14,58 +12,65 @@ import jakarta.servlet.http.HttpFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+
 @WebFilter("/login")
 public class login extends HttpFilter implements Filter {
-    private boolean verify = false;
+       
+    
+private boolean verify=false;
+   
+	
+	
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
+	/**
+	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
+	 */
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		 HttpServletRequest httpRequest = (HttpServletRequest) request;
+	        HttpServletResponse httpResponse = (HttpServletResponse) response;
+	        
+	        
+	        
+	       
+	        response.setContentType("text/html");
+			PrintWriter out = response.getWriter();
+			String login=request.getParameter("login");
+			String password=request.getParameter("password");
+			
+			verify=admin.checkLogin(login, password);
+			if(verify==false) {
+				
+				out.println("<HTML>");
+				out.println("<HEAD><TITLE>Ereur</TITLE></HEAD>");
+				out.println("<BODY>");
+				out.println("<H1>Login ou Mot de passe invalide!!!</H1>");
+				out.println("</BODY></HTML>");
+				out.close();
+				
+				
+				
+			}
+			else {
+				httpResponse.sendRedirect("admin-choix.jsp");
+				return;
 
-    @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-            throws IOException, ServletException {
-        HttpServletRequest httpRequest = (HttpServletRequest) request;
-        HttpServletResponse httpResponse = (HttpServletResponse) response;
+			}
+			
+			 
+		
+			chain.doFilter(request, response);
+	}
 
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-
-        String login = request.getParameter("login");
-        String password = request.getParameter("password");
-
-        // Create an instance of admin for authentication
-        admin adminUser = new admin();
-
-        // Authenticate the user
-        verify = adminUser.authenticate(login, password);
-
-        if (!verify) {
-            out.println("<HTML>");
-            out.println("<HEAD><TITLE>Error</TITLE></HEAD>");
-            out.println("<BODY>");
-            out.println("<H1>Login or password invalid!!!</H1>");
-            out.println("</BODY></HTML>");
-            out.close();
-        } else {
-            out.println("<HTML>");
-            out.println("<HEAD><TITLE>Welcome</TITLE></HEAD>");
-            out.println("<BODY>");
-            out.println("<H1>Welcome</H1>" + adminUser.getUsername());
-            out.println("</BODY></HTML>");
-            out.close();
-
-            chain.doFilter(request, response);
-        }
-    }
-
-    @Override
-    public void init(FilterConfig fConfig) throws ServletException {
-        // Initialization code here, if needed
-    }
-
-    @Override
-    public void destroy() {
-        // Cleanup code here, if needed
-    }
+	
+	public void init(FilterConfig fConfig) throws ServletException {
+		// TODO Auto-generated method stub
+	}
+	public void destroy() {
+		// TODO Auto-generated method stub
+	}
 }
-
 

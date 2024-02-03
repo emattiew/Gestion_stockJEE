@@ -8,11 +8,11 @@ public class produit {
     private double prix;
     private int quantite;
 
-    // Constructeur par défaut
+   
     public produit() {
     }
 
-    // Constructeur avec tous les paramètres
+    
     public produit(String nom, String codeBarre, double prix, int quantite) {
         this.nom = nom;
         this.codeBarre = codeBarre;
@@ -20,7 +20,7 @@ public class produit {
         this.quantite = quantite;
     }
 
-    // Getters et setters pour chaque attribut
+  
 
     public String getNom() {
         return nom;

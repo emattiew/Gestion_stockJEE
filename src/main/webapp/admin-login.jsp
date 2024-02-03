@@ -38,7 +38,7 @@
             border: 1px solid #ccc;
             box-sizing: border-box;
         }
-        input[type="submit"] {
+        button[type="submit"] {
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -47,7 +47,7 @@
             border-radius: 3px;
             transition: background-color 0.3s;
         }
-        input[type="submit"]:hover {
+        button[type="submit"]:hover {
             background-color: #0056b3;
         }
     </style>
@@ -55,11 +55,14 @@
 <body>
     <div class="container">
         <h2>Connexion Administrateur</h2>
-        <form action="LoginServlet" >
-            <input type="text" name="nom" placeholder="Nom d'utilisateur" required><br>
-            <input type="password" name="password" placeholder="Mot de passe" required><br>
-            <input type="submit" value="Se connecter">
+        <form action="login" method="post">
+            <table>			
+                <tr><td>Login</td><td><input class="input100" type="text" name="login" placeholder="Login"></td></tr>
+                <tr><td>Mot de passe</td><td><input class="input100" type="password" name="password" placeholder="Mot de passe"></td></tr>
+                <tr><td></td><td><button type="submit">Se Connecter</button></td></tr>
+            </table>
         </form>
     </div>
 </body>
 </html>
+

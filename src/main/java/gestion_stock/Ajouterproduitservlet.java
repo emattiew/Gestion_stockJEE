@@ -28,7 +28,8 @@ public class Ajouterproduitservlet extends HttpServlet {
         Magasin magasin = new Magasin(); // Vous pouvez obtenir le magasin à partir d'une source de données
         magasin.ajouterProduit(produit);
 
-        // Rediriger vers une page de confirmation ou de gestion des produits
+
+
         response.sendRedirect("confirmation.html");
     }
 }
