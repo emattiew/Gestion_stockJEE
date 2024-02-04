@@ -14,7 +14,14 @@
 <servlet-name>jersey-servlet</servlet-name>
 <url-pattern>/ws-rest/*</url-pattern>
 </servlet-mapping>
-
+ <servlet>
+        <servlet-name>produit-servlet</servlet-name>
+        <servlet-class>gestion_stock.ProduitServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>produit-servlet</servlet-name>
+        <url-pattern>/produitservlet</url-pattern>
+    </servlet-mapping>
     <filter>
         <display-name>login</display-name>
         <filter-name>login</filter-name>

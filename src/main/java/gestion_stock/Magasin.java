@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Magasin {
     private String nom;
-    private List<produit> stock;
+    private List<Produit> stock;
 
     // Constructeur par défaut
     public Magasin() {
@@ -29,12 +29,12 @@ public class Magasin {
     }
 
     // Getter pour le stock du magasin
-    public List<produit> getStock() {
+    public List<Produit> getStock() {
         return stock;
     }
 
   
-    public void ajouterProduit(produit produit) {
+    public void ajouterProduit(Produit produit) {
         stock.add(produit);
     }
 }

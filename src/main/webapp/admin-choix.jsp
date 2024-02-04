@@ -40,7 +40,8 @@
         <div>
             <a href="ajouter_directeurs.jsp" class="button">Ajouter des Directeurs</a>
             <a href="ajouter_magasins.jsp" class="button">Ajouter des Magasins</a>
-            <a href="Ajouterproduitservlet" class="button">Ajouter un Produit</a>
+          <a href="produitservlet" class="button">Ajouter un Produit</a>
+
         </div>
     </div>
 </body>

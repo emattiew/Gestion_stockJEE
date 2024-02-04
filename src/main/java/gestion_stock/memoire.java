@@ -6,9 +6,9 @@ package gestion_stock;
 
 	public class memoire {
 		
-		private static Map<String , produit> Services = new HashMap<>();
+		private static Map<String , Produit> Services = new HashMap<>();
 
-		public static Map<String , produit> getproduits() {
+		public static Map<String , Produit> getproduits() {
 			return Services;
 		}
 
@@ -16,9 +16,9 @@ package gestion_stock;
 
 
 
-		private static Map<Integer , produit> Comptes = new HashMap<>();
+		private static Map<Integer , Produit> Comptes = new HashMap<>();
 			
-		public static Map<Integer , produit> getComptes() {
+		public static Map<Integer , Produit> getComptes() {
 			return Comptes;
 		}
 
