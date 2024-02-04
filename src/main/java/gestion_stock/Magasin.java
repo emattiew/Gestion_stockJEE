@@ -1,41 +1,52 @@
 package gestion_stock;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Magasin {
+    private int id;
     private String nom;
     private List<Produit> stock;
 
-    // Constructeur par défaut
-    public Magasin() {
-        this.stock = new ArrayList<>();
-    }
-
-    // Constructeur avec nom
-    public Magasin(String nom) {
+    // Constructeur
+    public Magasin(int id, String nom) {
+        this.id = id;
         this.nom = nom;
         this.stock = new ArrayList<>();
     }
 
-    // Getter et setter pour le nom du magasin
-    public String getNom() {
-        return nom;
+    // Méthode pour ajouter un produit au stock du magasin
+    public void ajouterProduit(Produit produit) {
+        stock.add(produit);
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    // Méthode pour retirer un produit du stock du magasin
+    public void retirerProduit(Produit produit) {
+        stock.remove(produit);
     }
 
-    // Getter pour le stock du magasin
+    // Méthode pour obtenir le stock du magasin
     public List<Produit> getStock() {
         return stock;
     }
 
-  
-    public void ajouterProduit(Produit produit) {
-        stock.add(produit);
+    // Méthode pour obtenir le nom du magasin
+    public String getNom() {
+        return nom;
+    }
+
+    // Méthode pour définir le nom du magasin
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+    
+    // Méthode pour obtenir l'ID du magasin
+    public int getId() {
+        return id;
+    }
+
+    // Méthode pour définir l'ID du magasin
+    public void setId(int id) {
+        this.id = id;
     }
 }
-

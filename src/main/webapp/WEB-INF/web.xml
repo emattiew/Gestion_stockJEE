@@ -31,5 +31,14 @@
         <filter-name>login</filter-name>
         <url-pattern>/login</url-pattern>
     </filter-mapping>
+     <filter>
+        <display-name>loginm</display-name>
+        <filter-name>loginm</filter-name>
+        <filter-class>gestion_stock.loginm</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loginm</filter-name>
+        <url-pattern>/loginm</url-pattern>
+    </filter-mapping>
 </web-app>
 </element>

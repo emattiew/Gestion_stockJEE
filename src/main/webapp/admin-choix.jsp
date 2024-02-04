@@ -39,7 +39,7 @@
         <h1>Bienvenue Administrateur</h1>
         <div>
             <a href="ajouter_directeurs.jsp" class="button">Ajouter des Directeurs</a>
-            <a href="ajouter_magasins.jsp" class="button">Ajouter des Magasins</a>
+            <a href="magasinservlet" class="button">Ajouter des Magasins</a>
           <a href="produitservlet" class="button">Ajouter un Produit</a>
 
         </div>
